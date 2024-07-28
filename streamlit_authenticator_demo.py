@@ -11,7 +11,7 @@ from streamlit_authenticator.utilities import (CredentialsError,
                                                UpdateError)
 
 # Loading config file
-with open('../config.yaml', 'r', encoding='utf-8') as file:
+with open('config.yaml', 'r', encoding='utf-8') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 st.code('''
@@ -105,5 +105,5 @@ if st.session_state["authentication_status"]:
         st.error(e)
 
 # Saving config file
-with open('../config.yaml', 'w', encoding='utf-8') as file:
+with open('config.yaml', 'w', encoding='utf-8') as file:
     yaml.dump(config, file, default_flow_style=False)
