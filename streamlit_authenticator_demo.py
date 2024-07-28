@@ -18,11 +18,11 @@ Credentials:
 
 Name: John Smith
 Username: jsmith
-Password: 123
+Password: abc
 
 Name: Rebecca Briggs
 Username: rbriggs
-Password: 456
+Password: def
 '''
 )
 
