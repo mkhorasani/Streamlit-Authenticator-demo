@@ -11,7 +11,6 @@ from streamlit_authenticator.utilities import (CredentialsError,
                                                UpdateError)
 
 st.image('logo.png')
-st.write('___')
 
 st.code('''
 Credentials:
