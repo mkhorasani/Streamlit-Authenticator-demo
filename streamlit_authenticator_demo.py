@@ -52,9 +52,9 @@ elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
 elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
+st.write('___')
 
 # Creating a password reset widget
-st.write('_If you use this widget please revert the password to what it was before once you are done._')
 if st.session_state["authentication_status"]:
     try:
         if authenticator.reset_password(st.session_state["username"]):
@@ -63,6 +63,8 @@ if st.session_state["authentication_status"]:
         st.error(e)
     except CredentialsError as e:
         st.error(e)
+st.write('_If you use this widget please revert the password to what it was before once you are done._')
+st.write('___')
 
 # Creating a new user registration widget
 try:
@@ -86,6 +88,7 @@ try:
         st.error('Username not found')
 except ForgotError as e:
     st.error(e)
+st.write('___')
 
 # Creating a forgot username widget
 try:
@@ -98,6 +101,7 @@ try:
         st.error('Email not found')
 except ForgotError as e:
     st.error(e)
+st.write('___')
 
 # Creating an update user details widget
 st.write('_If you use this widget please revert the user details to what they were before once you are done._')
