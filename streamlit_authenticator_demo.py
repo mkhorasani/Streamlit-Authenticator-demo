@@ -54,7 +54,7 @@ elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
 
 # Creating a password reset widget
-st.code('If you use this widget please revert the password to what it was before once you are done.')
+st.write('_If you use this widget please revert the password to what it was before once you are done._')
 if st.session_state["authentication_status"]:
     try:
         if authenticator.reset_password(st.session_state["username"]):
@@ -100,7 +100,7 @@ except ForgotError as e:
     st.error(e)
 
 # Creating an update user details widget
-st.code('If you use this widget please revert the user details to what they were before once you are done.')
+st.write('_If you use this widget please revert the user details to what they were before once you are done._')
 if st.session_state["authentication_status"]:
     try:
         if authenticator.update_user_details(st.session_state["username"]):
