@@ -21,11 +21,13 @@ Credentials:
 
 Name: John Smith
 Username: jsmith
-Password: {'abc' if 'pp' not in config['usernames']['jsmith'].keys() else config['usernames']['jsmith']['pp']}
+Password: {'abc' if 'pp' not in config['credentials']['usernames']['jsmith'].keys() \ 
+           else config['credentials']['usernames']['jsmith']['pp']}
 
 Name: Rebecca Briggs
 Username: rbriggs
-Password: {'def' if 'pp' not in config['usernames']['rbriggs'].keys() else config['usernames']['rbriggs']['pp']}
+Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() \
+           else config['credentials']['usernames']['rbriggs']['pp']}
 """
 )
 
@@ -81,7 +83,7 @@ try:
      new_random_password) = authenticator.forgot_password()
     if username_of_forgotten_password:
         st.success(f"New password **'{new_random_password}'** to be sent to user securely")
-        config['usernames'][username_of_forgotten_password]['pp'] = new_random_password
+        config['credentials']['usernames'][username_of_forgotten_password]['pp'] = new_random_password
         # Random password to be transferred to the user securely
     elif not username_of_forgotten_password:
         st.error('Username not found')
