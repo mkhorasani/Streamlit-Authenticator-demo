@@ -58,10 +58,12 @@ if st.session_state["authentication_status"]:
     try:
         if authenticator.reset_password(st.session_state["username"]):
             st.success('Password modified successfully')
+            config['credentials']['usernames'][username_of_forgotten_password]['pp'] = new_random_password
     except ResetError as e:
         st.error(e)
     except CredentialsError as e:
         st.error(e)
+    st.write('_If you use the password reset widget please revert the password to what it was before once you are done._')
 
 # Creating a new user registration widget
 try:
