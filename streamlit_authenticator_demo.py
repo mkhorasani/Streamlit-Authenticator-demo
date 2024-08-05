@@ -19,11 +19,11 @@ st.image('logo.png')
 st.code(f"""
 Credentials:
 
-Name: config['credentials']['usernames']['jsmith']['name']
+Name: {config['credentials']['usernames']['jsmith']['name']}
 Username: jsmith
 Password: {'abc' if 'pp' not in config['credentials']['usernames']['jsmith'].keys() else config['credentials']['usernames']['jsmith']['pp']}
 
-Name: config['credentials']['usernames']['rbriggs']['name']
+Name: {config['credentials']['usernames']['rbriggs']['name']}
 Username: rbriggs
 Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() else config['credentials']['usernames']['rbriggs']['pp']}
 """
