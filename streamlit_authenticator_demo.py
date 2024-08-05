@@ -19,11 +19,11 @@ st.image('logo.png')
 st.code(f"""
 Credentials:
 
-Name: John Smith
+Name: config['credentials']['usernames']['jsmith']['name']
 Username: jsmith
 Password: {'abc' if 'pp' not in config['credentials']['usernames']['jsmith'].keys() else config['credentials']['usernames']['jsmith']['pp']}
 
-Name: Rebecca Briggs
+Name: config['credentials']['usernames']['rbriggs']['name']
 Username: rbriggs
 Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() else config['credentials']['usernames']['rbriggs']['pp']}
 """
@@ -62,7 +62,6 @@ if st.session_state["authentication_status"]:
         st.error(e)
     except CredentialsError as e:
         st.error(e)
-    st.write('_If you use the password reset widget please revert the password to what it was before once you are done._')
 
 # Creating a new user registration widget
 try:
@@ -107,7 +106,6 @@ if st.session_state["authentication_status"]:
             st.success('Entries updated successfully')
     except UpdateError as e:
         st.error(e)
-    st.write('_If you use the update user details widget please revert the user details to what they were before once you are done._')
 
 # Saving config file
 with open('config.yaml', 'w', encoding='utf-8') as file:
