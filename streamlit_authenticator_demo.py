@@ -10,24 +10,24 @@ from streamlit_authenticator.utilities import (CredentialsError,
                                                ResetError,
                                                UpdateError)
 
+# Loading config file
+with open('config.yaml', 'r', encoding='utf-8') as file:
+    config = yaml.load(file, Loader=SafeLoader)
+
 st.image('logo.png')
 
-st.code('''
+st.code(f"""
 Credentials:
 
 Name: John Smith
 Username: jsmith
-Password: abc
+Password: {'abc' if 'pp' not in config['usernames']['jsmith'].keys()}
 
 Name: Rebecca Briggs
 Username: rbriggs
-Password: def
-'''
+Password: {'def' if 'pp' not in config['usernames']['rbriggs'].keys()}
+"""
 )
-
-# Loading config file
-with open('config.yaml', 'r', encoding='utf-8') as file:
-    config = yaml.load(file, Loader=SafeLoader)
 
 # Creating the authenticator object
 authenticator = stauth.Authenticate(
@@ -81,6 +81,7 @@ try:
      new_random_password) = authenticator.forgot_password()
     if username_of_forgotten_password:
         st.success(f"New password **'{new_random_password}'** to be sent to user securely")
+        config['usernames'][username_of_forgotten_password]['pp'] = new_random_password
         # Random password to be transferred to the user securely
     elif not username_of_forgotten_password:
         st.error('Username not found')
