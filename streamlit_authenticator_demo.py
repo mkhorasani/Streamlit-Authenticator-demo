@@ -80,7 +80,7 @@ try:
      email_of_forgotten_password,
      new_random_password) = authenticator.forgot_password()
     if username_of_forgotten_password:
-        st.success(f'New password *(new_random_password)* to be sent to user securely')
+        st.success(f'New password **({new_random_password})** to be sent to user securely')
         # Random password to be transferred to the user securely
     elif not username_of_forgotten_password:
         st.error('Username not found')
@@ -92,7 +92,7 @@ try:
     (username_of_forgotten_username,
      email_of_forgotten_username) = authenticator.forgot_username()
     if username_of_forgotten_username:
-        st.success(f'Username *(username_of_forgotten_username)* to be sent to user securely')
+        st.success(f'Username **({username_of_forgotten_username})** to be sent to user securely')
         # Username to be transferred to the user securely
     elif not username_of_forgotten_username:
         st.error('Email not found')
