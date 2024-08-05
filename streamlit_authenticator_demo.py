@@ -92,7 +92,7 @@ try:
     (username_of_forgotten_username,
      email_of_forgotten_username) = authenticator.forgot_username()
     if username_of_forgotten_username:
-        st.success(f'Username **"{username_of_forgotten_username}'** to be sent to user securely")
+        st.success(f"Username **'{username_of_forgotten_username}'** to be sent to user securely")
         # Username to be transferred to the user securely
     elif not username_of_forgotten_username:
         st.error('Email not found')
