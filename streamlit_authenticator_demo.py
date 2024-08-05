@@ -21,13 +21,11 @@ Credentials:
 
 Name: John Smith
 Username: jsmith
-Password: {'abc' if 'pp' not in config['credentials']['usernames']['jsmith'].keys() \ 
-           else config['credentials']['usernames']['jsmith']['pp']}
+Password: {'abc' if 'pp' not in config['credentials']['usernames']['jsmith'].keys() else config['credentials']['usernames']['jsmith']['pp']}
 
 Name: Rebecca Briggs
 Username: rbriggs
-Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() \
-           else config['credentials']['usernames']['rbriggs']['pp']}
+Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() else config['credentials']['usernames']['rbriggs']['pp']}
 """
 )
 
