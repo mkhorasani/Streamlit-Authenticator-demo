@@ -39,10 +39,11 @@ authenticator = stauth.Authenticate(
 )
 
 # Creating a login widget
-try:
+#try:
+if True:
     authenticator.login()
-except LoginError as e:
-    st.error(e)
+#except LoginError as e:
+#    st.error(e)
 
 if st.session_state["authentication_status"]:
     authenticator.logout()
