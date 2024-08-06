@@ -44,7 +44,7 @@ if True:
     authenticator.login()
 #except LoginError as e:
 #    st.error(e)
-
+st.write(st.session_state)
 if st.session_state["authentication_status"]:
     authenticator.logout()
     st.write(f'Welcome *{st.session_state["name"]}*')
