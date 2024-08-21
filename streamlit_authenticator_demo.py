@@ -70,9 +70,9 @@ try:
     (email_of_registered_user,
      username_of_registered_user,
      name_of_registered_user) = authenticator.register_user(pre_authorization=False)
-     st.write(email_of_registered_user)
-     st.write(username_of_registered_user)
-     st.write(name_of_registered_user)
+    st.write(email_of_registered_user)
+    st.write(username_of_registered_user)
+    st.write(name_of_registered_user)
     if email_of_registered_user:
         st.success('User registered successfully')
 except RegisterError as e:
