@@ -30,7 +30,7 @@ Username: rbriggs
 Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() else config['credentials']['usernames']['rbriggs']['pp']}
 """
 )
-
+st.write(st.context.cookies)
 # Creating the authenticator object
 authenticator = stauth.Authenticate(
     config['credentials'],
