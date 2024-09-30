@@ -49,15 +49,6 @@ try:
 except LoginError as e:
     st.error(e)
 
-# Creating a guest login button
-try:
-    authenticator.experimental_guest_login('Login with Google', provider='google',
-                                            oauth2=st.secrets["oauth2"])
-    authenticator.experimental_guest_login('Login with Microsoft', provider='microsoft',
-                                            oauth2=st.secrets["oauth2"])
-except LoginError as e:
-    st.error(e)
-
 if st.session_state["authentication_status"]:
     authenticator.logout()
     st.write(f'Welcome *{st.session_state["name"]}*')
@@ -66,6 +57,17 @@ elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
 elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
+
+st.subheader('Guest login')
+
+# Creating a guest login button
+try:
+    authenticator.experimental_guest_login('Login with Google', provider='google',
+                                            oauth2=st.secrets["oauth2"])
+    authenticator.experimental_guest_login('Login with Microsoft', provider='microsoft',
+                                            oauth2=st.secrets["oauth2"])
+except LoginError as e:
+    st.error(e)
 
 # Creating a password reset widget
 if st.session_state["authentication_status"]:
