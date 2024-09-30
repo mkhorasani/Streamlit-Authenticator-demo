@@ -51,9 +51,9 @@ except LoginError as e:
 # Creating a guest login button
 try:
     authenticator.experimental_guest_login('Login with Google', provider='google',
-                                            oauth2=config['oauth2'])
+                                            oauth2=st.secrets["oauth2"])
     authenticator.experimental_guest_login('Login with Microsoft', provider='microsoft',
-                                            oauth2=config['oauth2'])
+                                            oauth2=st.secrets["oauth2"])
 except LoginError as e:
     st.error(e)
 
