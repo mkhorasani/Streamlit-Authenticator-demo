@@ -16,6 +16,8 @@ with open('config.yaml', 'r', encoding='utf-8') as file:
 
 st.image('logo.png')
 
+st.metric('Version', '0.4.1')
+
 st.code(f"""
 Credentials:
 
@@ -81,7 +83,7 @@ if st.session_state["authentication_status"]:
 try:
     (email_of_registered_user,
      username_of_registered_user,
-     name_of_registered_user) = authenticator.register_user(pre_authorization=False)
+     name_of_registered_user) = authenticator.register_user()
     if email_of_registered_user:
         st.success('User registered successfully')
 except RegisterError as e:
