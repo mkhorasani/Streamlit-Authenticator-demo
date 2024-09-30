@@ -38,9 +38,22 @@ authenticator = stauth.Authenticate(
     config['pre-authorized']
 )
 
+# authenticator = stauth.Authenticate(
+#     '../config.yaml'
+# )
+
 # Creating a login widget
 try:
     authenticator.login()
+except LoginError as e:
+    st.error(e)
+
+# Creating a guest login button
+try:
+    authenticator.experimental_guest_login('Login with Google', provider='google',
+                                            oauth2=config['oauth2'])
+    authenticator.experimental_guest_login('Login with Microsoft', provider='microsoft',
+                                            oauth2=config['oauth2'])
 except LoginError as e:
     st.error(e)
 
