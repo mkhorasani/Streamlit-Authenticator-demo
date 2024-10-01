@@ -21,11 +21,13 @@ st.metric('Version', '0.4.1')
 st.code(f"""
 Credentials:
 
-Name: {config['credentials']['usernames']['jsmith']['name']}
+First name: {config['credentials']['usernames']['jsmith']['first_name']}
+Last name: {config['credentials']['usernames']['jsmith']['last_name']}
 Username: jsmith
 Password: {'abc' if 'pp' not in config['credentials']['usernames']['jsmith'].keys() else config['credentials']['usernames']['jsmith']['pp']}
 
-Name: {config['credentials']['usernames']['rbriggs']['name']}
+First name: {config['credentials']['usernames']['rbriggs']['first_name']}
+Last name: {config['credentials']['usernames']['rbriggs']['last_name']}
 Username: rbriggs
 Password: {'def' if 'pp' not in config['credentials']['usernames']['rbriggs'].keys() else config['credentials']['usernames']['rbriggs']['pp']}
 """
