@@ -16,7 +16,7 @@ with open('config.yaml', 'r', encoding='utf-8') as file:
 
 st.image('logo.png')
 
-st.metric('Version', '0.4.1')
+st.metric('Version', '0.4.2')
 
 st.code(f"""
 Credentials:
